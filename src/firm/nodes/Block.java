@@ -2,6 +2,7 @@
 package firm.nodes;
 
 import com.sun.jna.Pointer;
+import java.nio.Buffer;
 
 public class Block extends Node {
 	static class Factory implements NodeWrapperFactory {
@@ -18,6 +19,10 @@ public class Block extends Node {
 
 	public Block(Pointer ptr) {
 		super(ptr);
+	}
+
+	public void setPreds(Node[] preds) {
+		firm.bindings.binding_irnode.set_irn_in(this.ptr, preds.length, getBufferFromNodeList(preds));
 	}
 
 	public firm.Entity getEntity() {
