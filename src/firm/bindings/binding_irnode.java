@@ -2805,8 +2805,6 @@ public class binding_irnode {
 
 	public static native Pointer get_op_IJmp();
 
-	public static native Pointer new_rd_Id(Pointer dbgi, Pointer block, Pointer irn_pred, Pointer mode);
-
 	public static native Pointer new_r_Id(Pointer block, Pointer irn_pred, Pointer mode);
 
 	public static native Pointer new_d_Id(Pointer dbgi, Pointer irn_pred, Pointer mode);
